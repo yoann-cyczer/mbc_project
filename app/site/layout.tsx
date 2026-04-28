@@ -1,14 +1,16 @@
-import "./globals.css";
+import type { ReactNode } from "react";
+import "@/styles/globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "MBC Visuel",
-  description: "Agence de communication digitale et création visuelle",
-};
-
-export default function RootLayout({ children }) {
+export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
-      <body className="bg-light text-secondary">{children}</body>
+      <body className="bg-light text-secondary">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
