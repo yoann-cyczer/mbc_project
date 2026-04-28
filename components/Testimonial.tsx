@@ -1,32 +1,13 @@
-import Testimonial from "./Testimonial";
+interface TestimonialProps {
+  name: string;
+  message: string;
+}
 
-export default function Testimonials() {
-  const testimonials = [
-    {
-      name: "Sophie L.",
-      message: "Notre nouveau logo et site internet sont superbes !",
-    },
-    {
-      name: "Alex T.",
-      message: "Excellent travail, service rapide et efficace.",
-    },
-    {
-      name: "Marie D.",
-      message: "Très professionnel, ils ont su capter notre univers.",
-    },
-  ];
-
+export default function Testimonial({ name, message }: TestimonialProps) {
   return (
-    <section className="px-8 py-20 bg-white">
-      <h2 className="text-3xl font-bold text-center mb-12">
-        Ils nous font confiance
-      </h2>
-
-      <div className="grid md:grid-cols-3 gap-8">
-        {testimonials.map((t, index) => (
-          <Testimonial key={index} name={t.name} message={t.message} />
-        ))}
-      </div>
-    </section>
+    <div className="bg-light shadow-md p-6 rounded-lg text-center hover:shadow-xl transition">
+      <p className="text-secondary opacity-80 italic mb-4">"{message}"</p>
+      <p className="font-semibold text-primary">— {name}</p>
+    </div>
   );
 }
