@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Portfolio() {
   const projects = [
     { src: "/portfolio1.png", alt: "Projet 1" },
@@ -21,12 +23,12 @@ export default function Portfolio() {
       </div>
 
       <div className="text-center mt-10">
-        <a
+        <Link
           href="/portfolio"
           className="bg-primary text-white px-6 py-3 rounded-md hover:bg-accent transition"
         >
           Voir tout le portfolio
-        </a>
+        </Link>
       </div>
     </section>
   );
