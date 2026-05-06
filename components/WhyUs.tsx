@@ -7,17 +7,41 @@ export default function WhyUs() {
   ];
 
   return (
-    <section className="px-8 py-20 bg-light text-secondary">
-      <h2 className="text-3xl font-bold text-center mb-12">
-        Pourquoi travailler avec nous ?
-      </h2>
-      <div className="grid md:grid-cols-4 gap-8">
-        {items.map((item, index) => (
-          <div key={index} className="bg-white shadow-md p-6 rounded-lg text-center hover:shadow-xl transition">
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p className="text-sm opacity-80">{item.description}</p>
+    <section className="relative px-6 md:px-10 py-24 md:py-32 bg-light text-secondary">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-16 md:mb-20">
+          <div className="md:col-span-8">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted">
+                03 — Méthode
+              </span>
+              <span className="flex-1 h-px bg-line" />
+            </div>
+            <h2 className="font-display font-light tracking-tightest leading-[1] text-5xl md:text-7xl">
+              Pourquoi nous <span className="italic text-primary">choisir</span> ?
+            </h2>
           </div>
-        ))}
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
+          {items.map((item, index) => (
+            <div key={index} className="group relative pt-8 border-t border-secondary/15 hover:border-primary transition-colors duration-500">
+              <span className="absolute -top-px left-0 h-0.5 w-0 bg-primary transition-all duration-700 group-hover:w-full" />
+
+              <span className="font-mono text-[11px] tracking-[0.2em] text-muted">
+                / {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <h3 className="font-display text-2xl md:text-[28px] font-light leading-tight mt-4 mb-4 tracking-tightest">
+                {item.title}
+              </h3>
+
+              <p className="text-sm leading-relaxed text-secondary/70">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
